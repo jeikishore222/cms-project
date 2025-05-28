@@ -14,6 +14,23 @@ export default  function SignIn() {
     };
     const handleSubmit = (e) => {
         e.preventDefault();
+        if (!isSignIn) {
+            localStorage.setItem("userEmail", form.email);
+            localStorage.setItem("userPassword", form.password);
+            alert("Sign up successful! Please sign in.");
+            setIsSignIn(true);
+            setForm({ email: "", password: "" });
+            return;
+        } else {
+            
+            const savedEmail = localStorage.getItem("userEmail");
+            const savedPassword = localStorage.getItem("userPassword");
+            if (form.email === savedEmail && form.password === savedPassword) {
+            alert("Sign in successful!");
+            } else {
+            alert("Invalid email or password.");
+            }
+        }
         
         console.log("Sign in with", form);
     };
