@@ -2,29 +2,46 @@ import React from "react";
 
 const styles = {
   container: {
-    fontFamily: "Arial, sans-serif",
-    padding: "40px",
-    backgroundColor: "#f9f9f9",
+    fontFamily: "Segoe UI, sans-serif",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#e9eff5",
     minHeight: "100vh",
+    padding: "20px",
+  },
+  card: {
+    backgroundColor: "#ffffff",
+    borderRadius: "12px",
+    padding: "40px",
+    maxWidth: "400px",
+    width: "100%",
+    boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)",
+    textAlign: "center",
   },
   heading: {
-    color: "#333",
+    color: "#222",
+    fontSize: "28px",
+    marginBottom: "10px",
+  },
+  subheading: {
+    color: "#555",
+    fontSize: "16px",
+    marginBottom: "20px",
   },
   nav: {
     display: "flex",
     flexDirection: "column",
-    maxWidth: "300px",
-    marginTop: "20px",
+    gap: "10px",
   },
   link: {
     backgroundColor: "#0366d6",
-    color: "white",
-    padding: "12px 16px",
-    margin: "5px 0",
+    color: "#fff",
+    padding: "12px 18px",
+    borderRadius: "8px",
     textDecoration: "none",
-    borderRadius: "5px",
-    textAlign: "center",
-    transition: "background 0.2s",
+    fontWeight: "500",
+    transition: "background 0.3s, transform 0.2s",
   },
 };
 
@@ -41,20 +58,28 @@ const navLinks = [
 
 const Home = () => (
   <div style={styles.container}>
-    <h1 style={styles.heading}>Welcome to the Main Page</h1>
-    <p>Select a page to visit:</p>
-    <div style={styles.nav}>
-      {navLinks.map((link) => (
-        <a
-          key={link.href}
-          href={link.href}
-          style={styles.link}
-          onMouseOver={e => (e.currentTarget.style.backgroundColor = "#024ea2")}
-          onMouseOut={e => (e.currentTarget.style.backgroundColor = "#0366d6")}
-        >
-          {link.label}
-        </a>
-      ))}
+    <div style={styles.card}>
+      <h1 style={styles.heading}>Welcome to the Main Page</h1>
+      <p style={styles.subheading}>Select a page to visit:</p>
+      <div style={styles.nav}>
+        {navLinks.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            style={styles.link}
+            onMouseOver={(e) => {
+              e.currentTarget.style.backgroundColor = "#024ea2";
+              e.currentTarget.style.transform = "scale(1.03)";
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.backgroundColor = "#0366d6";
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
     </div>
   </div>
 );
