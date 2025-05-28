@@ -9,7 +9,7 @@ export default  function SignIn() {
     const [isSignIn, setIsSignIn] = useState(true);
 
     const toggleForm = () => {
-        setIsSignIn((prev) => !prev);
+        alert("Sign up is not available. Please sign in.");
         setForm({ email: "", password: "" });
     };
     const handleSubmit = (e) => {
