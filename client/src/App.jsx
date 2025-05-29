@@ -6,11 +6,14 @@ import './App.css'
 function App() {
   return (
     <>
-      <Home/>;
+      <StudentDetails/>
+      <Home/>
       <Signup/>
       <SignIn/>
     </>
   )
 }
-
 export default App;
+
+
+
