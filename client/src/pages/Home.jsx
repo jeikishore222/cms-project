@@ -49,9 +49,9 @@ const styles = {
 
 const navLinks = [
   { href: "/about", label: "About Page" },
-  { href: "/developer", label: "Developer Page" },
-  { href: "/signin", label: "Sign In" },
-  { href: "/signup", label: "Sign Up" },
+  { href: "/develop", label: "Developer Page" },
+  { href: "/login", label: "Sign In" },
+  { href: "/logout", label: "Sign Up" },
   { href: "/layout", label: "Basic Layout" },
   { href: "/auth-context", label: "Auth Context" },
   { href: "/dashboard", label: "Dashboard" },
@@ -65,9 +65,7 @@ const Home = () => (
       <p style={styles.subheading}>Select a page to visit:</p>
       <div style={styles.nav}>
         {navLinks.map((link) => (
-         <Link
-  key={link.href}
-  to={link.href}
+         <Link key={link.href} to={link.href}
   style={styles.link}
   onMouseOver={(e) => {
     e.currentTarget.style.backgroundColor = "#024ea2";
