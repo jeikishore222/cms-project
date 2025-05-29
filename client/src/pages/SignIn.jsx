@@ -57,7 +57,7 @@ export default  function SignIn() {
                             className={inputClass}
                             type="password"
                             name="password"
-                            value={form.password}
+                            value={form.password} 
                             onChange={handleChange}
                             required
                         />
