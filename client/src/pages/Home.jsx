@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const styles = {
   container: {
@@ -63,21 +65,22 @@ const Home = () => (
       <p style={styles.subheading}>Select a page to visit:</p>
       <div style={styles.nav}>
         {navLinks.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            style={styles.link}
-            onMouseOver={(e) => {
-              e.currentTarget.style.backgroundColor = "#024ea2";
-              e.currentTarget.style.transform = "scale(1.03)";
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.backgroundColor = "#0366d6";
-              e.currentTarget.style.transform = "scale(1)";
-            }}
-          >
-            {link.label}
-          </a>
+         <Link
+  key={link.href}
+  to={link.href}
+  style={styles.link}
+  onMouseOver={(e) => {
+    e.currentTarget.style.backgroundColor = "#024ea2";
+    e.currentTarget.style.transform = "scale(1.03)";
+  }}
+  onMouseOut={(e) => {
+    e.currentTarget.style.backgroundColor = "#0366d6";
+    e.currentTarget.style.transform = "scale(1)";
+  }}
+>
+  {link.label}
+</Link>
+
         ))}
       </div>
     </div>
