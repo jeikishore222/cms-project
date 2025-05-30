@@ -75,7 +75,7 @@ export default function SignIn() {
         </form>
         <div className="mt-4 text-center">
           Don't have an account?{" "}
-          <Link to="/signup" className="text-blue-600 hover:underline">
+          <Link to="/logout" className="text-blue-600 hover:underline">
             Sign Up
           </Link>
         </div>
