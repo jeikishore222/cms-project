@@ -74,6 +74,10 @@ const styles = {
 };
 
 const Home = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div style={styles.container}>
       <div style={styles.overlay}></div>
@@ -83,13 +87,13 @@ const Home = () => {
 
       {/* Top-right navigation */}
       <div style={styles.topRightNav}>
-        <Link to="/developer" style={styles.topLink}>
+        <Link to="/develop" style={styles.topLink} onClick={handleClick}>
           Developer Page
         </Link>
-        <Link to="/signin" style={styles.topLink}>
+        <Link to="/login" style={styles.topLink} onClick={handleClick}>
           Sign In
         </Link>
-        <Link to="/signup" style={styles.topLink}>
+        <Link to="/logout" style={styles.topLink} onClick={handleClick}>
           Sign Up
         </Link>
       </div>
