@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import SignUp from "./Signup";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignIn() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [message, setMessage] = useState("");
-  
+  const navigate = useNavigate();
 
   const containerClass = "flex flex-col items-center justify-center min-h-screen bg-gray-100";
   const formClass = "bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-80";
@@ -27,6 +26,9 @@ export default function SignIn() {
       form.password === savedUser.password
     ) {
       setMessage("Sign in successful!");
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 1000); // Optional: short delay to show the message
     } else {
       setMessage("Invalid email or password.");
     }
@@ -66,8 +68,8 @@ export default function SignIn() {
         </form>
         <div className="mt-4 text-center">
           Don't have an account?{" "}
-          <Link to="/logout" className="text-blue-600 hover:underline">
-            sign up
+          <Link to="/signup" className="text-blue-600 hover:underline">
+            Sign Up
           </Link>
         </div>
         {message && <p className="mt-4 text-center text-green-600">{message}</p>}
