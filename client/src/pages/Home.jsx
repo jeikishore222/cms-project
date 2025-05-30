@@ -76,7 +76,7 @@ const Home = () => {
       {/* Top-left brand */}
       <div style={styles.topLeft}>Welcome to AJD foods</div>
 
-      {/* Top-right navigation */}
+     {/* Top-right navigation */}
       <div style={styles.topRightNav}>
         <Link to="/developer" style={styles.topLink}>
           Developer Page
