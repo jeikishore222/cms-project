@@ -14,7 +14,7 @@ const Dashboard = () => (
                     <Link to="/" className="cursor-pointer hover:text-blue-400 text-white block w-full h-full">Home</Link>
                 </li>
                 <li className="mb-4">
-                    <Link to="/analytics" className="cursor-pointer hover:text-blue-400 text-white block w-full h-full">Analytics</Link>
+                    <Link to="/food" className="cursor-pointer hover:text-blue-400 text-white block w-full h-full">Food menu</Link>
                 </li>
                 <li className="mb-4">
                     <Link to="/settings" className="cursor-pointer hover:text-blue-400 text-white block w-full h-full">Settings</Link>

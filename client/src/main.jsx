@@ -9,6 +9,7 @@ import SignIn from './pages/SignIn.jsx'
 import Signup from './pages/Signup.jsx'
 import Develop from './pages/Develop.jsx'
 import Dashboard from './pages/dashboard.jsx'
+import Food from './pages/Food'
 const router=createBrowserRouter([
   {
     path : '/',
@@ -29,6 +30,10 @@ const router=createBrowserRouter([
   {
     path : '/dashboard',
     element:<Dashboard/>
+  },
+  {
+    path : '/food',
+    element:<Food/>
   },
 ]);
 
