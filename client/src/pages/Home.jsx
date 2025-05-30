@@ -87,13 +87,13 @@ const Home = () => {
 
       {/* Top-right navigation */}
       <div style={styles.topRightNav}>
-        <Link to="/develop" style={styles.topLink} onClick={handleClick}>
+        <Link to="/develop" style={styles.topLink}>
           Developer Page
         </Link>
-        <Link to="/login" style={styles.topLink} onClick={handleClick}>
+        <Link to="/login" style={styles.topLink}>
           Sign In
         </Link>
-        <Link to="/logout" style={styles.topLink} onClick={handleClick}>
+        <Link to="/logout" style={styles.topLink}>
           Sign Up
         </Link>
       </div>
