@@ -3,27 +3,27 @@ import React from "react";
 const developers = [
   {
     id: 1,
-    name: 'Jeikishore K',
-    regNo: '22BEECE019',
-    course: 'Electronics And Communication Engineering',
+    name: "Jeikishore K",
+    regNo: "22BEECE019",
+    course: "Electronics And Communication Engineering",
   },
   {
     id: 2,
-    name: 'Afsal Mohamed K',
-    regNo: '22BEECE001',
-    course: 'Electronics And Communication Engineering',
+    name: "Afsal Mohamed K",
+    regNo: "22BEECE001",
+    course: "Electronics And Communication Engineering",
   },
   {
     id: 3,
-    name: 'Dharan Vignesh S',
-    regNo: '22BEECE009',
-    course: 'Electronics And Communication Engineering',
-  }
+    name: "Dharan Vignesh S",
+    regNo: "22BEECE009",
+    course: "Electronics And Communication Engineering",
+  },
 ];
 
 const Develop = () => {
   return (
-    <div style={{ padding: '20px', backgroundColor: '#ffffff' }}>
+    <div style={{ padding: "20px", backgroundColor: "#ffffff" }}>
       <h1>Developer Page - Student Details</h1>
       {developers.map((student) => (
         <div
