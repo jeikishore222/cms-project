@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const backgroundImage =
-  "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1920&q=80"; // Replace with a better one if needed
+  "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1920&q=80";
 
 const styles = {
   container: {
@@ -74,10 +74,6 @@ const styles = {
 };
 
 const Home = () => {
-  const handleClick = (e) => {
-    e.preventDefault();
-  };
-
   return (
     <div style={styles.container}>
       <div style={styles.overlay}></div>
@@ -90,10 +86,10 @@ const Home = () => {
         <Link to="/develop" style={styles.topLink}>
           Developer Page
         </Link>
-        <Link to="/login" style={styles.topLink}>
+        <Link to="/signin" style={styles.topLink}>
           Sign In
         </Link>
-        <Link to="/logout" style={styles.topLink}>
+        <Link to="/signup" style={styles.topLink}>
           Sign Up
         </Link>
       </div>
