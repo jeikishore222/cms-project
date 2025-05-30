@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const developers = [
   {
@@ -34,6 +34,8 @@ const CARD_WIDTH = 280;
 
 const DeveloperCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const startXRef = useRef(null);
+  const draggingRef = useRef(false);
 
   const prev = () => {
     setCurrentIndex((i) => (i === 0 ? developers.length - 1 : i - 1));
@@ -45,21 +47,37 @@ const DeveloperCarousel = () => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'ArrowLeft') {
-        prev();
-      } else if (e.key === 'ArrowRight') {
-        next();
-      }
+      if (e.key === 'ArrowLeft') prev();
+      else if (e.key === 'ArrowRight') next();
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  const handleStart = (clientX) => {
+    startXRef.current = clientX;
+    draggingRef.current = true;
+  };
+
+  const handleEnd = (clientX) => {
+    if (!draggingRef.current) return;
+    const diff = startXRef.current - clientX;
+    if (diff > 50) next();
+    else if (diff < -50) prev();
+    draggingRef.current = false;
+  };
+
   return (
     <div style={styles.container}>
       <div style={styles.overlay}>
         <h1 style={styles.title}>Developer Page</h1>
-        <div style={styles.sliderWrapper}>
+        <div
+          style={styles.sliderWrapper}
+          onMouseDown={(e) => handleStart(e.clientX)}
+          onMouseUp={(e) => handleEnd(e.clientX)}
+          onTouchStart={(e) => handleStart(e.touches[0].clientX)}
+          onTouchEnd={(e) => handleEnd(e.changedTouches[0].clientX)}
+        >
           <button onClick={prev} style={{ ...styles.navButton, left: 20 }} aria-label="Previous">
             ‹
           </button>
@@ -115,10 +133,10 @@ const styles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    fontFamily: 'Poppins, sans-serif',
+    fontFamily: 'Chaucer, sans-serif',
   },
   overlay: {
-    background: 'rgba(255, 255, 255, 0.85)',
+    background: 'rgba(218, 216, 216, 0.64)',
     padding: 40,
     borderRadius: 20,
     width: CARD_WIDTH * 3 + 100,
@@ -138,6 +156,7 @@ const styles = {
     width: CARD_WIDTH * 3,
     height: 420,
     perspective: 1500,
+    cursor: 'grab',
   },
   slider: {
     display: 'flex',
