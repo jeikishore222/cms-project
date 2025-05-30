@@ -1,87 +1,111 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
+const backgroundImage =
+  "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1920&q=80"; // Replace with a better one if needed
 
 const styles = {
   container: {
-    fontFamily: "Segoe UI, sans-serif",
+    fontFamily: "'Poppins', sans-serif",
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    minHeight: "100vh",
+    position: "relative",
+    overflow: "hidden",
+    color: "#fff",
+  },
+  overlay: {
+    position: "absolute",
+    inset: 0,
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    zIndex: 1,
+  },
+  topLeft: {
+    position: "absolute",
+    top: "20px",
+    left: "30px",
+    zIndex: 2,
+    fontSize: "20px",
+    fontWeight: "700",
+    color: "#fff",
+  },
+  topRightNav: {
+    position: "absolute",
+    top: "20px",
+    right: "30px",
+    zIndex: 2,
+    display: "flex",
+    gap: "15px",
+  },
+  topLink: {
+    backgroundColor: "#ffffffdd",
+    color: "#333",
+    padding: "10px 18px",
+    borderRadius: "8px",
+    textDecoration: "none",
+    fontWeight: "600",
+    fontSize: "14px",
+    transition: "all 0.3s ease",
+  },
+  topLinkHover: {
+    backgroundColor: "#fff",
+    boxShadow: "0 4px 8px rgba(0,0,0,0.15)",
+    transform: "translateY(-2px)",
+  },
+  centerContent: {
+    position: "relative",
+    zIndex: 2,
+    height: "100vh",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#e9eff5",
-    minHeight: "100vh",
-    padding: "20px",
-  },
-  card: {
-    backgroundColor: "#ffffff",
-    borderRadius: "12px",
-    padding: "40px",
-    maxWidth: "400px",
-    width: "100%",
-    boxShadow: "0 8px 16px rgba(0, 0, 0, 0.1)",
     textAlign: "center",
+    padding: "0 20px",
   },
-  heading: {
-    color: "#222",
+  quote: {
     fontSize: "28px",
-    marginBottom: "10px",
-  },
-  subheading: {
-    color: "#555",
-    fontSize: "16px",
-    marginBottom: "20px",
-  },
-  nav: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "10px",
-  },
-  link: {
-    backgroundColor: "#0366d6",
+    maxWidth: "700px",
+    lineHeight: "1.4",
     color: "#fff",
-    padding: "12px 18px",
-    borderRadius: "8px",
-    textDecoration: "none",
-    fontWeight: "500",
-    transition: "background 0.3s, transform 0.2s",
+    fontStyle: "italic",
+    textShadow: "0 2px 10px rgba(0,0,0,0.6)",
   },
 };
 
-const navLinks = [
-  { href: "/about", label: "About Page" },
-  { href: "/developer", label: "Developer Page" },
-  { href: "/signin", label: "Sign In" },
-  { href: "/signup", label: "Sign Up" },
-  { href: "/layout", label: "Basic Layout" },
-  { href: "/auth-context", label: "Auth Context" },
-  { href: "/dashboard", label: "Dashboard" },
-  { href: "/routes", label: "App Routes" },
-];
+const Home = () => {
+  const handleClick = (e) => {
+    e.preventDefault();
+  };
 
-const Home = () => (
-  <div style={styles.container}>
-    <div style={styles.card}>
-      <h1 style={styles.heading}>Welcome to the Main Page</h1>
-      <p style={styles.subheading}>Select a page to visit:</p>
-      <div style={styles.nav}>
-        {navLinks.map((link) => (
-          <a
-            key={link.href}
-            href={link.href}
-            style={styles.link}
-            onMouseOver={(e) => {
-              e.currentTarget.style.backgroundColor = "#024ea2";
-              e.currentTarget.style.transform = "scale(1.03)";
-            }}
-            onMouseOut={(e) => {
-              e.currentTarget.style.backgroundColor = "#0366d6";
-              e.currentTarget.style.transform = "scale(1)";
-            }}
-          >
-            {link.label}
-          </a>
-        ))}
+  return (
+    <div style={styles.container}>
+      <div style={styles.overlay}></div>
+
+      {/* Top-left brand */}
+      <div style={styles.topLeft}>Welcome to AJD foods</div>
+
+      {/* Top-right navigation */}
+      <div style={styles.topRightNav}>
+        <Link to="/develop" style={styles.topLink}>
+          Developer Page
+        </Link>
+        <Link to="/login" style={styles.topLink}>
+          Sign In
+        </Link>
+        <Link to="/logout" style={styles.topLink}>
+          Sign Up
+        </Link>
+      </div>
+
+      {/* Center quote */}
+      <div style={styles.centerContent}>
+        <div style={styles.quote}>
+          “One cannot think well, love well, sleep well, if one has not dined well.”
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Home;
