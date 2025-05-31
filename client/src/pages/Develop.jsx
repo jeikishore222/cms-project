@@ -122,6 +122,7 @@ const Develop = () => {
   );
 };
 
+
 const styles = {
   container: {
     height: '100vh',
@@ -213,5 +214,6 @@ const styles = {
     transition: '0.3s ease',
   },
 };
+
 
 export default Develop;
