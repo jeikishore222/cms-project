@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import Dashboard from './dashboard';
+import Dashboard from './DashboardWithStyle';
 
 const foodList = [
   {

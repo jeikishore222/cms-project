@@ -8,7 +8,7 @@ import Home from './pages/Home'
 import SignIn from './pages/SignIn.jsx'
 import Signup from './pages/Signup.jsx'
 import Develop from './pages/Develop.jsx'
-import Dashboard from './pages/dashboard.jsx'
+import Dashboard from './pages/DashboardWithStyle.jsx'
 import Food from './pages/Food'
 const router=createBrowserRouter([
   {
