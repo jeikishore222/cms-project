@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -30,7 +31,7 @@ const Home = () => {
               Sign In
             </Link>
             <Link 
-              to="/logout" 
+              to="/signup" 
               className="bg-white/90 text-gray-800 px-5 py-2 rounded-lg font-semibold hover:bg-white transition-all text-sm"
             >
               Sign Up

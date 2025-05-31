@@ -27,10 +27,10 @@ const Dashboard = () => (
     </aside>
 );
 
-export const DashboardWithStyle = (props) => (
+const DashboardWithStyle = (props) => (
     <div className="fixed left-0 top-0 h-screen w-1/4 min-w-[220px] max-w-[400px] z-10">
         <Dashboard {...props} />
     </div>
 );
 
-export default Dashboard;
+export default DashboardWithStyle;

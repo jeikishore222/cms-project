@@ -1,5 +1,6 @@
+
 import React, { useState } from 'react';
-import Dashboard from '../pages/dashboard';
+import Dashboard from './dashboard';
 
 const foodList = [
   {
@@ -48,7 +49,7 @@ const Food = () => {
     setCart((prev) => prev.filter((_, i) => i !== index));
   };
 
-  
+  // Split foodList into chunks of 3
   const chunkedFoodList = [];
   for (let i = 0; i < foodList.length; i += 3) {
     chunkedFoodList.push(foodList.slice(i, i + 3));
@@ -56,11 +57,11 @@ const Food = () => {
 
   return (
     <div className="flex">
-     
+      {/* Dashboard sidebar */}
       <div className="min-w-[260px] mr-8">
         <Dashboard />
       </div>
-      
+      {/* Food content */}
       <div className="flex-1 p-6">
         <h2 className="text-xl font-bold mb-4">Food Menu</h2>
         <div className="mb-6 flex flex-col gap-6">
