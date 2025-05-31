@@ -16,11 +16,9 @@ const Dashboard = () => (
                 <li className="mb-4">
                     <Link to="/food" className="cursor-pointer hover:text-blue-400 text-white block w-full h-full">Food menu</Link>
                 </li>
-                <li className="mb-4">
-                    <Link to="/settings" className="cursor-pointer hover:text-blue-400 text-white block w-full h-full">Settings</Link>
-                </li>
+               
                 <li>
-                    <Link to="/logout" className="cursor-pointer hover:text-blue-400 text-white block w-full h-full">Logout</Link>
+                    <Link to="/login" className="cursor-pointer hover:text-blue-400 text-white block w-full h-full">Logout</Link>
                 </li>
             </ul>
         </nav>
@@ -33,4 +31,4 @@ const DashboardWithStyle = (props) => (
     </div>
 );
 
-export default DashboardWithStyle;
+export default Dashboard;

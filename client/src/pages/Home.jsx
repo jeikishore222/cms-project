@@ -1,98 +1,51 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const backgroundImage =
-  "https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1920&q=80";
-
-const styles = {
-  container: {
-    fontFamily: "'Poppins', sans-serif",
-    backgroundImage: `url(${backgroundImage})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    minHeight: "100vh",
-    position: "relative",
-    overflow: "hidden",
-    color: "#fff",
-  },
-  overlay: {
-    position: "absolute",
-    inset: 0,
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    zIndex: 1,
-  },
-  topLeft: {
-    position: "absolute",
-    top: "20px",
-    left: "30px",
-    zIndex: 2,
-    fontSize: "20px",
-    fontWeight: "700",
-    color: "#fff",
-  },
-  topRightNav: {
-    position: "absolute",
-    top: "20px",
-    right: "30px",
-    zIndex: 2,
-    display: "flex",
-    gap: "15px",
-  },
-  topLink: {
-    backgroundColor: "#ffffffdd",
-    color: "#333",
-    padding: "10px 18px",
-    borderRadius: "8px",
-    textDecoration: "none",
-    fontWeight: "600",
-    fontSize: "14px",
-    transition: "all 0.3s ease",
-  },
-  centerContent: {
-    position: "relative",
-    zIndex: 2,
-    height: "100vh",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    textAlign: "center",
-    padding: "0 20px",
-  },
-  quote: {
-    fontSize: "28px",
-    maxWidth: "700px",
-    lineHeight: "1.4",
-    color: "#fff",
-    fontStyle: "italic",
-    textShadow: "0 2px 10px rgba(0,0,0,0.6)",
-  },
-};
-
 const Home = () => {
   return (
-    <div style={styles.container}>
-      <div style={styles.overlay}></div>
+    <div 
+      className="min-h-screen bg-cover bg-center relative"
+      style={{ 
+        backgroundImage: "url(https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1920&q=80)"
+      }}
+    >
+     
+      <div className="absolute inset-0 bg-black/50"></div>
+      
+      
+      <div className="relative z-10 h-full flex flex-col">
+      
+        <div className="flex justify-end p-6">
+          <div className="flex gap-4">
+            <Link 
+              to="/develop" 
+              className="bg-white/90 text-gray-800 px-5 py-2 rounded-lg font-semibold hover:bg-white transition-all text-sm"
+            >
+              Developer
+            </Link>
+            <Link 
+              to="/login" 
+              className="bg-white/90 text-gray-800 px-5 py-2 rounded-lg font-semibold hover:bg-white transition-all text-sm"
+            >
+              Sign In
+            </Link>
+            <Link 
+              to="/signup" 
+              className="bg-white/90 text-gray-800 px-5 py-2 rounded-lg font-semibold hover:bg-white transition-all text-sm"
+            >
+              Sign Up
+            </Link>
+          </div>
+        </div>
 
-      {/* Top-left brand */}
-      <div style={styles.topLeft}>Welcome to AJD foods</div>
-
-     {/* Top-right navigation */}
-      <div style={styles.topRightNav}>
-        <Link to="/develop" style={styles.topLink}>
-          Developer Page
-        </Link>
-        <Link to="/login" style={styles.topLink}>
-          Sign In
-        </Link>
-        <Link to="/logout" style={styles.topLink}>
-          Sign Up
-        </Link>
-      </div>
-
-      {/* Center quote */}
-      <div style={styles.centerContent}>
-        <div style={styles.quote}>
-          “One cannot think well, love well, sleep well, if one has not dined well.”
+       
+        <div className="flex-grow flex items-center justify-center">
+          <div className="text-center px-4">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Welcome to AJD Foods</h1>
+            <p className="text-xl text-white/90 italic">
+              "One cannot think well, love well, sleep well, if one has not dined well."
+            </p>
+          </div>
         </div>
       </div>
     </div>
