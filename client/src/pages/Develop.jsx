@@ -32,7 +32,7 @@ const developers = [
 
 const CARD_WIDTH = 280;
 
-const DeveloperCarousel = () => {
+const Develop = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const startXRef = useRef(null);
   const draggingRef = useRef(false);
@@ -214,4 +214,4 @@ const styles = {
   },
 };
 
-export default DeveloperCarousel;
+export default Develop;
