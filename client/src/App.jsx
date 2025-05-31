@@ -18,9 +18,7 @@ function App() {
       <Food/>
     </>
   )
-
-
 }
-
 export default App;
+
 

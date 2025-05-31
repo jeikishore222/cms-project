@@ -30,7 +30,7 @@ const Home = () => {
               Sign In
             </Link>
             <Link 
-              to="/signup" 
+              to="/logout" 
               className="bg-white/90 text-gray-800 px-5 py-2 rounded-lg font-semibold hover:bg-white transition-all text-sm"
             >
               Sign Up
