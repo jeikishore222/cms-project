@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 function initialState() {
   return {
+
     email: "",
     password: "",
   };
@@ -20,6 +21,7 @@ const SignUp = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem("signupUser", JSON.stringify(form));
+
     setMessage("Sign up successful! Redirecting to sign in...");
     setForm(initialState);
     setTimeout(() => {
@@ -55,10 +57,13 @@ const SignUp = () => {
             className="w-full px-3 py-2 border rounded focus:outline-none focus:ring focus:border-blue-400"
           />
         </div>
+
         <button
           type="submit"
           className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition-colors mt-4 font-semibold"
         >
+
+
           Sign Up
         </button>
       </form>
@@ -72,5 +77,6 @@ const SignUp = () => {
     </div>
   );
 };
+
 
 export default SignUp;

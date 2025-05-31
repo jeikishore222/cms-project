@@ -9,12 +9,12 @@ const Home = () => {
         backgroundImage: "url(https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1920&q=80)"
       }}
     >
-      {/* Dark overlay for better text visibility */}
+      
       <div className="absolute inset-0 bg-black/50"></div>
       
-      {/* Main content */}
+      
       <div className="relative z-10 h-full flex flex-col">
-        {/* Navigation buttons in top right corner */}
+        
         <div className="flex justify-end p-6">
           <div className="flex gap-4">
             <Link 

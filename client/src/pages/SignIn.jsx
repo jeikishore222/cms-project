@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 export default function SignIn() {
   const [form, setForm] = useState({ email: "", password: "" });
+
   const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
@@ -12,6 +13,7 @@ export default function SignIn() {
   const inputClass = "shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-4";
   const buttonClass = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full";
 
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -19,6 +21,7 @@ export default function SignIn() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const savedUser = JSON.parse(localStorage.getItem("signupUser"));
+
     if (!savedUser) {
       setMessage("No user found. Please sign up first.");
     } else if (
@@ -44,6 +47,7 @@ export default function SignIn() {
             <label className={labelClass}>Email:</label>
             <input
               className={inputClass}
+
               type="email"
               name="email"
               value={form.email}
@@ -52,9 +56,11 @@ export default function SignIn() {
             />
           </div>
           <div>
+
             <label className={labelClass}>Password:</label>
             <input
               className={inputClass}
+
               type="password"
               name="password"
               value={form.password}
@@ -62,6 +68,7 @@ export default function SignIn() {
               required
             />
           </div>
+
           <button className={buttonClass} type="submit">
             Sign In
           </button>
